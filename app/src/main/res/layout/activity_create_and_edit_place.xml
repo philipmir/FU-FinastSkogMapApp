@@ -7,6 +7,20 @@
     android:background="@drawable/cuteleft"
     tools:context=".CreateAndEditPlace">
 
+    <ImageButton
+        android:id="@+id/gpsAddImageButton"
+        style="@android:style/Widget.Holo.Light.ImageButton"
+        android:layout_width="138dp"
+        android:layout_height="113dp"
+        android:layout_marginBottom="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gpsTextView"
+        app:layout_constraintVertical_bias="0.84"
+        app:srcCompat="@drawable/ic_baseline_add_location_24" />
+
     <Button
         android:id="@+id/saveButton"
         android:layout_width="wrap_content"
@@ -15,10 +29,10 @@
         android:text="Save"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.817"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.673"
+        app:layout_constraintStart_toEndOf="@+id/gpsAddImageButton"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.739" />
+        app:layout_constraintVertical_bias="0.808" />
 
     <EditText
         android:id="@+id/cityEditText"
@@ -51,13 +65,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="Check Cord"
+        android:text="Cord"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.217"
+        app:layout_constraintEnd_toStartOf="@+id/gpsAddImageButton"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cordTextView"
-        app:layout_constraintVertical_bias="0.823" />
+        app:layout_constraintVertical_bias="0.863" />
 
     <EditText
         android:id="@+id/addInfoTextView"

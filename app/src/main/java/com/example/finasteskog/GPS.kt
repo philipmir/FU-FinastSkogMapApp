@@ -24,6 +24,7 @@ class GPS : AppCompatActivity() {
     lateinit var locationProvider : FusedLocationProviderClient
     lateinit var locationRequest: LocationRequest
     lateinit var locationCallback: LocationCallback
+    lateinit var lattyOnlyLatLng: LatLng
 
     lateinit var infoGpsEditText: EditText
     lateinit var gpsTextView: TextView
@@ -45,12 +46,19 @@ class GPS : AppCompatActivity() {
                 for (location in locationResult.locations) {
                     Log.d("!!!", "lat: ${location.latitude}, lng: ${location.longitude}}")
                     var latty = "Your GPS Location Is:\n\n lat: ${location.latitude} \n lng: ${location.longitude}}"
+                    var lattyOnlyLatLng = LatLng(location.latitude, location.longitude)
                     gpsTextView.setText(latty)
+
 
 
                 }
             }
         }
+
+
+
+
+
 
         if ( ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)
               != PackageManager.PERMISSION_GRANTED) {
@@ -77,11 +85,6 @@ class GPS : AppCompatActivity() {
 
 
     }
-
-
-
-
-
 
 
     override fun onResume() {

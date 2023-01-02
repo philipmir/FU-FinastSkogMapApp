@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Window
 import android.widget.Button
 import android.widget.ImageButton
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -92,11 +93,7 @@ class RecyclerActivity : AppCompatActivity() {
             val intent = Intent(this, MapActivity::class.java)
             startActivity(intent)
         }
-        val fab3 = findViewById<FloatingActionButton>(R.id.checkCordFloatingActionButton)
-        fab3.setOnClickListener {
-            val intent = Intent(this, GPS::class.java)
-            startActivity(intent)
-        }
+
 
 
 

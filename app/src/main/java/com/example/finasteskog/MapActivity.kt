@@ -65,6 +65,8 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
 
 
 
+
+
     }
 
 
@@ -141,18 +143,19 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
 
 
 
-//        for(place in PlaceInfo) {
-//            val marker = mMap.addMarker(MarkerOptions().position(LatLng())
-//            marker?.tag = place
-//        }
+        for(place in DataManager.places1) {
+            val marker = mMap.addMarker(MarkerOptions().position(GPS().lattyOnlyLatLng))
+            marker?.tag = place
+        }
 //        val geocoder = Geocoder(this)
-//
-//
+
+
 //
 //        for (place in DataManager.places1) {
 //            val parts: Array<String> = string.split(",")
 //            val latitude = parts[0].toDouble()
 //            val longitude = parts[1].toDouble()
+//
 //
 //            val placeLocationLatLng: LatLng? = LatLng(latitude, longitude)
 //            val addresses = geocoder.getFromLocation(
