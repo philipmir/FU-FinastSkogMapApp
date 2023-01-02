@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "637712977802",
+    "project_id": "finasteskog",
+    "storage_bucket": "finasteskog.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:637712977802:android:739128616d8c65c0d14273",
+        "android_client_info": {
+          "package_name": "com.example.finasteskog"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "637712977802-jgrfl09bu2bapflrhdlmv8146767kkda.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDm9nhYyIImlIWDP7wtHOkLvjHSGFEdIAc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "637712977802-jgrfl09bu2bapflrhdlmv8146767kkda.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
