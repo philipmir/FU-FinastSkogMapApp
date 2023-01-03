@@ -26,7 +26,7 @@ class PlaceRecycleAdapter(
         var ageTextView = itemView.findViewById<TextView>(R.id.ageTextVIew)
         var presentButton = itemView.findViewById<CheckBox>(R.id.checkBox)
         var deleteButton = itemView.findViewById<ImageButton>(R.id.deleteButton)
-        var addMapButton = itemView.findViewById<ImageButton>(R.id.addInfoButton)
+//        var addMapButton = itemView.findViewById<ImageButton>(R.id.addInfoButton)
         var placePosition = 0
 
         init {
@@ -46,10 +46,10 @@ class PlaceRecycleAdapter(
 
             }
 
-            addMapButton.setOnClickListener {
-                val intent = Intent(context, AddItemActivity::class.java)
-                context.startActivity(intent)
-            }
+//            addMapButton.setOnClickListener {
+//                val intent = Intent(context, AddItemActivity::class.java)
+//                context.startActivity(intent)
+//            }
         }
 
     }

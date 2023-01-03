@@ -28,7 +28,7 @@ class GPS : AppCompatActivity() {
 
     lateinit var infoGpsEditText: EditText
     lateinit var gpsTextView: TextView
-    lateinit var gpsAddImageButton: ImageButton
+    lateinit var saveImageButton: ImageButton
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +37,7 @@ class GPS : AppCompatActivity() {
 
         infoGpsEditText = findViewById(R.id.infoGpsEditText)
         gpsTextView = findViewById(R.id.gpsTextView)
-        gpsAddImageButton = findViewById(R.id.gpsAddImageButton)
+        saveImageButton = findViewById(R.id.saveImageButton)
 
         locationProvider = LocationServices.getFusedLocationProviderClient(this)
         locationRequest = LocationRequest.Builder(2000).build()
@@ -69,9 +69,9 @@ class GPS : AppCompatActivity() {
 
         }
 
-        gpsAddImageButton.setOnClickListener {
+        saveImageButton.setOnClickListener {
 
-            MapActivity().markInfo()
+
 
         }
 

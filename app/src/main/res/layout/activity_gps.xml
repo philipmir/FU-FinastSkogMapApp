@@ -9,8 +9,9 @@
 
     <EditText
         android:id="@+id/infoGpsEditText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="52dp"
         android:background="@color/white"
         android:backgroundTint="@color/white"
         android:ems="10"
@@ -19,22 +20,36 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toTopOf="@+id/gpsTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.505" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/gpsTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
-        android:background="@color/common_google_signin_btn_text_dark_disabled"
+        android:layout_marginTop="212dp"
+        android:background="@color/cardview_shadow_end_color"
         android:text="TextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.006" />
+
+    <ImageButton
+        android:id="@+id/saveImageButton"
+        android:layout_width="127dp"
+        android:layout_height="117dp"
+        android:background="@color/cardview_shadow_end_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gpsTextView"
+        app:layout_constraintVertical_bias="0.964"
+        app:srcCompat="@drawable/savebuttoncute" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

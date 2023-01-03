@@ -1,10 +1,12 @@
 package com.example.finasteskog
 
+import android.content.Intent
 import android.location.Address
 import android.location.Geocoder
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.maps.model.LatLng
@@ -27,7 +29,8 @@ class CreateAndEditPlace : AppCompatActivity() {
     lateinit var cityEditText : EditText
     lateinit var cordTextView: TextView
     lateinit var addInfoTextView : TextView
-    lateinit var checkButton: Button
+    lateinit var latLngImageButton: ImageButton
+    lateinit var gpsImageButton: ImageButton
 
     lateinit var db : FirebaseFirestore
     lateinit var nameView : EditText
@@ -43,7 +46,8 @@ class CreateAndEditPlace : AppCompatActivity() {
         cityEditText = findViewById(R.id.cityEditText)
         cordTextView = findViewById(R.id.cordTextView)
         addInfoTextView = findViewById(R.id.addInfoTextView)
-        checkButton = findViewById(R.id.checkButton)
+        latLngImageButton = findViewById(R.id.latLngImageButton)
+        gpsImageButton = findViewById(R.id.gpsImageButton)
 
         auth = Firebase.auth
         db = Firebase.firestore
@@ -57,8 +61,12 @@ class CreateAndEditPlace : AppCompatActivity() {
 
 
 
+        gpsImageButton.setOnClickListener {
+            gotToGPSActivity()
+        }
 
-        checkButton.setOnClickListener {
+
+        latLngImageButton.setOnClickListener {
             buttonGetCoordinates()
 
 
@@ -67,7 +75,7 @@ class CreateAndEditPlace : AppCompatActivity() {
 
         val placePosition = intent.getIntExtra(PLACE_POSITION_KEY, POSITION_NOT_SET )
 
-        val saveButton = findViewById<Button>(R.id.saveButton)
+        val saveButton = findViewById<ImageButton>(R.id.saveImageButton2)
         if(placePosition != POSITION_NOT_SET) { // edit place
             displayPlace(placePosition)
             saveButton.setOnClickListener {
@@ -82,6 +90,14 @@ class CreateAndEditPlace : AppCompatActivity() {
 
             }
         }
+
+
+    }
+
+
+    fun gotToGPSActivity() {
+        val intent = Intent(this, GPS::class.java)
+        startActivity(intent)
     }
 
 
