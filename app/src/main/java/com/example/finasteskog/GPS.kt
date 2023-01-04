@@ -70,6 +70,7 @@ class GPS : AppCompatActivity() {
         }
 
         saveImageButton.setOnClickListener {
+            addNewGpsPlace()
 
 
 
@@ -77,13 +78,15 @@ class GPS : AppCompatActivity() {
 
     }
 
-    fun addGps() {
+    fun addNewGpsPlace() {
+//        val place = cityEditText.text.toString()
+        val location = gpsTextView.text.toString()
+        val infomation = infoGpsEditText.text.toString()
 
+        val placee = Place(location, infomation)
+        DataManager.places1.add(placee)
 
-
-
-
-
+        finish()
     }
 
 
