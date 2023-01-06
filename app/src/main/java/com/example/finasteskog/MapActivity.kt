@@ -58,6 +58,8 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
 
         createPlaces()
 
+//        markFromLatLng()
+
 
 
 
@@ -134,7 +136,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
 
     }
 
-    fun markInfo() {
+    fun markFromLatLng() {
 
 
 

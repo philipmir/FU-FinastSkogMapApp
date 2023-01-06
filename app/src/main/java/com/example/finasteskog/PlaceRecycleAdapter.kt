@@ -8,26 +8,32 @@ import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.ImageButton
 import android.widget.TextView
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.finasteskog.DataManager.places1
 
 class PlaceRecycleAdapter(
+
+
     val context: Context, places1: MutableList<Place>,
                            ) :
+
     RecyclerView.Adapter<PlaceRecycleAdapter.ViewHolder>() {
 
 
     var layoutInflater = LayoutInflater.from(context)
 
 
+
+
     inner class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
         var nameTextView = itemView.findViewById<TextView>(R.id.nameTextView)
-        var ageTextView = itemView.findViewById<TextView>(R.id.ageTextVIew)
-        var presentButton = itemView.findViewById<CheckBox>(R.id.checkBox)
+        var locationTextView = itemView.findViewById<TextView>(R.id.locationTextVIew)
+        var natureButton = itemView.findViewById<CheckBox>(R.id.checkBox)
         var deleteButton = itemView.findViewById<ImageButton>(R.id.deleteButton)
 //        var addMapButton = itemView.findViewById<ImageButton>(R.id.addInfoButton)
         var placePosition = 0
+
+
 
         init {
             itemView.setOnClickListener {
@@ -37,12 +43,15 @@ class PlaceRecycleAdapter(
             }
 
 
-            presentButton.setOnClickListener {
-                DataManager.places1[placePosition].nature = presentButton.isChecked
+            natureButton.setOnClickListener {
+                DataManager.places1[placePosition].nature = natureButton.isChecked
             }
 
             deleteButton.setOnClickListener {
                 removePlace(placePosition)
+
+
+
 
             }
 
@@ -64,8 +73,8 @@ class PlaceRecycleAdapter(
         val place = places1[position]
 
         holder.nameTextView.text = place.name
-        holder.ageTextView.text = place.location.toString()
-        holder.presentButton.isChecked = place.nature
+        holder.locationTextView.text = place.location.toString()
+        holder.natureButton.isChecked = place.nature
         holder.placePosition = position
     }
 
