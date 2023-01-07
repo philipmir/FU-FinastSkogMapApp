@@ -27,7 +27,7 @@ class PlacesInfoAdapter(val context: Context) : GoogleMap.InfoWindowAdapter {
 
         val place = marker.tag as? Place
 
-        locationTextView.text = place?.name
+        locationTextView.text = place?.place
         factTextView.text = place?.information
         if (place != null) {
             place.image?.let { locationImageView.setImageResource(it) }

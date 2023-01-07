@@ -58,7 +58,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
 
         createPlaces()
 
-//        markFromLatLng()
+        markFromLatLng()
 
 
 
@@ -119,7 +119,8 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
 
 
         for (place in DataManager.places1) {
-            val placeName = place.name.toString()
+            val placeName = place.place.toString()
+
             val addresses: List<Address> = geocoder.getFromLocationName(placeName, 1)
             if (addresses != null && !addresses.isEmpty()) {
                 val address = addresses[0]
@@ -145,9 +146,13 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
 
 
 
-        for(place in DataManager.places1) {
-            val marker = mMap.addMarker(MarkerOptions().position(GPS().lattyOnlyLatLng))
-            marker?.tag = place
+        for(placez in DataManager.places1) {
+            var latz = GPS().latty
+            var longz = GPS().longy
+
+
+            val marker = mMap.addMarker(MarkerOptions().position(LatLng(latz, longz)))
+            marker?.tag = placez
         }
 //        val geocoder = Geocoder(this)
 

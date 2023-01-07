@@ -115,7 +115,7 @@ class RecyclerActivity : AppCompatActivity() {
 
     fun printItemListTest() {
         for (item in DataManager.places1) {
-            Log.d("!!!", "${item.name}")
+            Log.d("!!!", "${item.place}")
         }
     }
 

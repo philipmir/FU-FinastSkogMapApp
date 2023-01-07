@@ -4,12 +4,10 @@ import android.content.Intent
 import android.location.Address
 import android.location.Geocoder
 import android.os.Bundle
-import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.gms.maps.model.LatLng
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -105,7 +103,7 @@ class CreateAndEditPlace : AppCompatActivity() {
     fun displayPlace(position : Int) {
         val place = DataManager.places1[position]
 
-        cityEditText.setText(place.name)
+        cityEditText.setText(place.place)
         cordTextView.setText(place.location)
         addInfoTextView.setText(place.information)
 
@@ -113,7 +111,7 @@ class CreateAndEditPlace : AppCompatActivity() {
     }
 
     fun editPlace(position: Int) {
-        DataManager.places1[position].name = cityEditText.text.toString()
+        DataManager.places1[position].place = cityEditText.text.toString()
         DataManager.places1[position].location = cordTextView.text.toString()
         DataManager.places1[position].information = addInfoTextView.text.toString()
 
@@ -157,10 +155,14 @@ class CreateAndEditPlace : AppCompatActivity() {
 
     fun saveItem() {
 
-        val name = nameView.text.toString()
+        val place = nameView.text.toString()
         val location = cordTextView.text.toString()
         val information = addInfoTextView.text.toString()
-        val item = Place(name = name, location = location, information = information)
+//        val lat = GPS().latTextView.toString().toDouble()
+//        val long = GPS().longTextView.toString().toDouble()
+        var laty = GPS().latty
+        var longy = GPS().longy
+        val item = Place(place = place, location = location, information = information, latDouble = laty, longDouble = longy )
 
 
         nameView.setText("")

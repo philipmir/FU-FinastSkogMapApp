@@ -72,7 +72,7 @@ class PlaceRecycleAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val place = places1[position]
 
-        holder.nameTextView.text = place.name
+        holder.nameTextView.text = place.place
         holder.locationTextView.text = place.location.toString()
         holder.natureButton.isChecked = place.nature
         holder.placePosition = position
