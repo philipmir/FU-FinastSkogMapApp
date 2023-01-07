@@ -10,8 +10,9 @@ data class Place(@DocumentId var documentId: String? = null,
                  var information: String? = null,
                  var image: Int? = null,
 
-                 var latDouble : Double? = null,
-                 var longDouble: Double? = null
+                 var latDouble: Double? = null,
+                 var longDouble: Double? = null,
+                var bothLatLong : LatLng? = null
                  )
 
 

@@ -113,7 +113,7 @@ class GPS : AppCompatActivity() {
         latNlongy = LatLng(latty, longy)
         val infomation = infoGpsEditText.text.toString()
 
-        val placee = Place(null, infomation, latNlongy.toString(), false, infomation, R.drawable.ic_baseline_house_24, latty, longy)
+        val placee = Place(documentId = "items", infomation, latNlongy.toString(), false, infomation, R.drawable.ic_baseline_house_24, latty, longy)
         DataManager.places1.add(placee)
 
         val user = auth.currentUser

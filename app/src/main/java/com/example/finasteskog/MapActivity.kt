@@ -145,14 +145,19 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         //val p3 = PlaceInfo("Borta", "bra", LatLng(), R.drawable.ic_baseline_house_24)
 
 
+        val geocoder = Geocoder(this)
 
-        for(placez in DataManager.places1) {
+        for(placesz in DataManager.places1) {
+
+
             var latz = GPS().latty
             var longz = GPS().longy
+            var latlang = LatLng(latz, longz)
 
 
-            val marker = mMap.addMarker(MarkerOptions().position(LatLng(latz, longz)))
-            marker?.tag = placez
+            val marker = placesz.latDouble?.let { placesz.longDouble?.let { it1 -> LatLng(it, it1) } }
+                ?.let { MarkerOptions().position(it) }?.let { mMap.addMarker(it) }
+            marker?.tag = placesz
         }
 //        val geocoder = Geocoder(this)
 
