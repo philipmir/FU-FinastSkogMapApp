@@ -110,6 +110,9 @@ class GPS : AppCompatActivity() {
         locationProvider.requestLocationUpdates(locationRequest, locationCallback, Looper.getMainLooper())
     }
 
+    fun GitHubNotWorking() {
+
+    }
 
 
     override fun onRequestPermissionsResult(
