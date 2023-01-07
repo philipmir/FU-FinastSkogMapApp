@@ -9,7 +9,7 @@ import android.widget.ImageButton
 
 class WelcomeActivity : AppCompatActivity() {
 
-    lateinit var cuteButton : ImageButton
+    lateinit var cuteButton : ImageButton  ///
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
