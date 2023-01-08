@@ -25,7 +25,8 @@ class CreateAndEditPlace : AppCompatActivity() {
     lateinit var locationEditText: EditText
 
     lateinit var cityEditText : EditText
-    lateinit var cordTextView: TextView
+    lateinit var latCityTextView: TextView
+    lateinit var longCityTextView : TextView
     lateinit var addInfoTextView : TextView
     lateinit var latLngImageButton: ImageButton
     lateinit var gpsImageButton: ImageButton
@@ -42,7 +43,8 @@ class CreateAndEditPlace : AppCompatActivity() {
 
 
         cityEditText = findViewById(R.id.cityEditText)
-        cordTextView = findViewById(R.id.cordTextView)
+        latCityTextView = findViewById(R.id.latCityTextView)
+        longCityTextView = findViewById(R.id.longCityTextView)
         addInfoTextView = findViewById(R.id.addInfoTextView)
         latLngImageButton = findViewById(R.id.latLngImageButton)
         gpsImageButton = findViewById(R.id.gpsImageButton)
@@ -104,7 +106,8 @@ class CreateAndEditPlace : AppCompatActivity() {
         val place = DataManager.places1[position]
 
         cityEditText.setText(place.place)
-        cordTextView.setText(place.location)
+        latCityTextView.setText(place.latDouble.toString())
+        longCityTextView.setText(place.longDouble.toString())
         addInfoTextView.setText(place.information)
 
 
@@ -112,7 +115,8 @@ class CreateAndEditPlace : AppCompatActivity() {
 
     fun editPlace(position: Int) {
         DataManager.places1[position].place = cityEditText.text.toString()
-        DataManager.places1[position].location = cordTextView.text.toString()
+        DataManager.places1[position].latDouble = latCityTextView.text.toString().toDouble()
+        DataManager.places1[position].longDouble = longCityTextView.text.toString().toDouble()
         DataManager.places1[position].information = addInfoTextView.text.toString()
 
 
@@ -122,10 +126,11 @@ class CreateAndEditPlace : AppCompatActivity() {
 
     fun addNewPlace() {
         val place = cityEditText.text.toString()
-        val location = cordTextView.text.toString()
+        val latDouble = latCityTextView.text.toString().toDouble()
+        val longDouble = longCityTextView.text.toString().toDouble()
         val infomation = addInfoTextView.text.toString()
 
-        val placee = Place(place, location, infomation)
+        val placee = Place(place, infomation, null,false, infomation, null, latDouble, longDouble)
         DataManager.places1.add(placee)
 
         finish()
@@ -143,7 +148,8 @@ class CreateAndEditPlace : AppCompatActivity() {
                 val doubleLat = addressList[0].latitude
                 val doubleLong = addressList[0].longitude
 
-                cordTextView.text = "Latitude   : ${doubleLat}\nLongitude:${doubleLong}"
+                latCityTextView.text = doubleLat.toString()
+                longCityTextView.text = doubleLong.toString()
 
 
 
@@ -156,17 +162,21 @@ class CreateAndEditPlace : AppCompatActivity() {
     fun saveItem() {
 
         val place = nameView.text.toString()
-        val location = cordTextView.text.toString()
+        var doubleLat = latCityTextView.text.toString().toDouble()
+        var doubleLong = longCityTextView.text.toString().toDouble()
         val information = addInfoTextView.text.toString()
+//        val lat = latCityTextView.text.toString().toDouble()
+//        val long = longCityTextView
 //        val lat = GPS().latTextView.toString().toDouble()
 //        val long = GPS().longTextView.toString().toDouble()
-        var laty = GPS().latty
-        var longy = GPS().longy
-        val item = Place(place = place, location = location, information = information, latDouble = laty, longDouble = longy )
+//        var laty = GPS().latty
+//        var longy = GPS().longy
+        val item = Place( place = place, location = null, information = information, latDouble = doubleLat, longDouble = doubleLong )
 
 
         nameView.setText("")
-        cordTextView.setText("")
+        latCityTextView.setText("")
+        longCityTextView.setText("")
 
         val user = auth.currentUser
         if (user == null) {
@@ -178,6 +188,11 @@ class CreateAndEditPlace : AppCompatActivity() {
 
     }
 
+    fun deleteItem () {
+
+
+
+    }
 
 
 }

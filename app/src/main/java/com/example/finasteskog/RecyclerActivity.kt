@@ -73,6 +73,17 @@ class RecyclerActivity : AppCompatActivity() {
                     }
                 }
 
+                val fab = findViewById<FloatingActionButton>(R.id.floatingActionButton)
+                fab.setOnClickListener {
+                    val intent = Intent(this, CreateAndEditPlace::class.java)
+                    startActivity(intent)
+                }
+                val fab2 = findViewById<FloatingActionButton>(R.id.mapFloatingActionButton)
+                fab2.setOnClickListener {
+                    val intent = Intent(this, MapActivity::class.java)
+                    startActivity(intent)
+                }
+
                 printItemListTest()
 
             }
@@ -83,16 +94,7 @@ class RecyclerActivity : AppCompatActivity() {
 
 
 
-        val fab = findViewById<FloatingActionButton>(R.id.floatingActionButton)
-        fab.setOnClickListener {
-            val intent = Intent(this, CreateAndEditPlace::class.java)
-            startActivity(intent)
-        }
-        val fab2 = findViewById<FloatingActionButton>(R.id.mapFloatingActionButton)
-        fab2.setOnClickListener {
-            val intent = Intent(this, MapActivity::class.java)
-            startActivity(intent)
-        }
+
 
 
 

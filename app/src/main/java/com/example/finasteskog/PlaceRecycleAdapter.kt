@@ -6,10 +6,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
+import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.finasteskog.DataManager.places1
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.DocumentId
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.model.Document
+import com.google.firebase.ktx.Firebase
 
 class PlaceRecycleAdapter(
 
@@ -17,10 +24,19 @@ class PlaceRecycleAdapter(
     val context: Context, places1: MutableList<Place>,
                            ) :
 
+
     RecyclerView.Adapter<PlaceRecycleAdapter.ViewHolder>() {
 
 
     var layoutInflater = LayoutInflater.from(context)
+
+
+
+    lateinit var db : FirebaseFirestore
+    lateinit var auth : FirebaseAuth
+
+
+
 
 
 
@@ -30,6 +46,7 @@ class PlaceRecycleAdapter(
         var locationTextView = itemView.findViewById<TextView>(R.id.locationTextVIew)
         var natureButton = itemView.findViewById<CheckBox>(R.id.checkBox)
         var deleteButton = itemView.findViewById<ImageButton>(R.id.deleteButton)
+
 //        var addMapButton = itemView.findViewById<ImageButton>(R.id.addInfoButton)
         var placePosition = 0
 
@@ -53,6 +70,8 @@ class PlaceRecycleAdapter(
 
 
 
+
+
             }
 
 //            addMapButton.setOnClickListener {
@@ -60,6 +79,7 @@ class PlaceRecycleAdapter(
 //                context.startActivity(intent)
 //            }
         }
+
 
     }
 
@@ -73,7 +93,7 @@ class PlaceRecycleAdapter(
         val place = places1[position]
 
         holder.nameTextView.text = place.place
-        holder.locationTextView.text = place.location.toString()
+        holder.locationTextView.text = "Latitude: ${place.latDouble} \nLongitude: ${place.longDouble}"
         holder.natureButton.isChecked = place.nature
         holder.placePosition = position
     }
@@ -82,6 +102,20 @@ class PlaceRecycleAdapter(
 
     fun removePlace(position: Int) {
         DataManager.places1.removeAt(position)
+
+
+
+//
+//        val user = auth.currentUser
+//        if (user == null) {
+//            return
+//        }
+//
+//        db.collection("users").document(user.uid)
+//            .collection("items").document().delete()
+
+
+
         notifyDataSetChanged()
     }
 
