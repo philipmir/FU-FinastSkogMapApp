@@ -9,6 +9,7 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.core.app.ActivityCompat
+import com.example.finasteskog.databinding.ActivityAddPictureBinding
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest
@@ -17,8 +18,10 @@ import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.model.LatLng
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.DocumentId
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.model.Document
 import com.google.firebase.ktx.Firebase
 
 class GPS : AppCompatActivity() {
@@ -101,6 +104,10 @@ class GPS : AppCompatActivity() {
 
 
 
+
+
+
+
         }
 
     }
@@ -113,7 +120,7 @@ class GPS : AppCompatActivity() {
         latNlongy = LatLng(latty, longy)
         val infomation = infoGpsEditText.text.toString()
 
-        val placee = Place(documentId = "items", infomation, latNlongy.toString(), false, infomation, R.drawable.ic_baseline_house_24, latty, longy)
+        val placee = Place(documentId = null, infomation, latNlongy.toString(), false, infomation, R.drawable.ic_baseline_house_24, latty, longy)
         DataManager.places1.add(placee)
 
         val user = auth.currentUser

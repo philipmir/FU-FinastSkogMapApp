@@ -44,6 +44,8 @@ class PlaceRecycleAdapter(
     inner class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
         var nameTextView = itemView.findViewById<TextView>(R.id.nameTextView)
         var locationTextView = itemView.findViewById<TextView>(R.id.locationTextVIew)
+        var latMenuTextView = itemView.findViewById<TextView>(R.id.latMenuTextView)
+        var longMenuTextView = itemView.findViewById<TextView>(R.id.longMenuTextView)
         var natureButton = itemView.findViewById<CheckBox>(R.id.checkBox)
         var deleteButton = itemView.findViewById<ImageButton>(R.id.deleteButton)
 
@@ -93,7 +95,9 @@ class PlaceRecycleAdapter(
         val place = places1[position]
 
         holder.nameTextView.text = place.place
-        holder.locationTextView.text = "Latitude: ${place.latDouble} \nLongitude: ${place.longDouble}"
+        holder.locationTextView.text = place.location
+        holder.latMenuTextView.text = place.latDouble.toString()
+        holder.longMenuTextView.text = place.longDouble.toString()
         holder.natureButton.isChecked = place.nature
         holder.placePosition = position
     }

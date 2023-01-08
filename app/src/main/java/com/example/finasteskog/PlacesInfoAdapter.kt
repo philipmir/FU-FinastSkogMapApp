@@ -44,6 +44,6 @@ class PlacesInfoAdapter(val context: Context) : GoogleMap.InfoWindowAdapter {
 
 }
 
-private fun ImageView.setImageResource(image: Image) {
-
-}
+//private fun ImageView.setImageResource(image: Image) {
+//
+//}
