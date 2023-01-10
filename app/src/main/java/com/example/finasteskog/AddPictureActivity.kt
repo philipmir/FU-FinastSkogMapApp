@@ -87,7 +87,7 @@ class AddPictureActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (resultCode == 100 && resultCode == RESULT_OK) {
+        if (requestCode == 100 && resultCode == RESULT_OK) {
             ImageUrl = data?.data!!
             binding.firebaseImage.setImageURI(ImageUrl)
         }

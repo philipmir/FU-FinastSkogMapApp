@@ -45,8 +45,9 @@
         android:text="Select Image"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.52"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/firebaseImage"
+        app:layout_constraintVertical_bias="0.807" />
 
     <Button
         android:id="@+id/uploadImageBtn"
