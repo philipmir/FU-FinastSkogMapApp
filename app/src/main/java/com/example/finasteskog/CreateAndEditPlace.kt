@@ -30,6 +30,7 @@ class CreateAndEditPlace : AppCompatActivity() {
     lateinit var addInfoTextView : TextView
     lateinit var latLngImageButton: ImageButton
     lateinit var gpsImageButton: ImageButton
+    lateinit var addImageButton : ImageButton
 
     lateinit var db : FirebaseFirestore
     lateinit var nameView : EditText
@@ -48,6 +49,7 @@ class CreateAndEditPlace : AppCompatActivity() {
         addInfoTextView = findViewById(R.id.addInfoTextView)
         latLngImageButton = findViewById(R.id.latLngImageButton)
         gpsImageButton = findViewById(R.id.gpsImageButton)
+        addImageButton = findViewById(R.id.addImageButton)
 
         auth = Firebase.auth
         db = Firebase.firestore
@@ -58,7 +60,9 @@ class CreateAndEditPlace : AppCompatActivity() {
 //            saveItem()
 //        }
 
-
+        addImageButton.setOnClickListener {
+            gotToAddPicture()
+        }
 
 
         gpsImageButton.setOnClickListener {
@@ -97,6 +101,11 @@ class CreateAndEditPlace : AppCompatActivity() {
 
     fun gotToGPSActivity() {
         val intent = Intent(this, GPS::class.java)
+        startActivity(intent)
+    }
+
+    fun gotToAddPicture() {
+        val intent = Intent(this, AddPictureActivity::class.java)
         startActivity(intent)
     }
 

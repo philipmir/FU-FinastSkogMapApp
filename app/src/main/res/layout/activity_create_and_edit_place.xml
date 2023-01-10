@@ -29,10 +29,10 @@
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/saveImageButton2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addInfoTextView"
-        app:layout_constraintVertical_bias="0.375" />
+        app:layout_constraintVertical_bias="0.117" />
 
     <EditText
         android:id="@+id/addInfoTextView"
@@ -71,10 +71,9 @@
         android:background="@color/cardview_shadow_end_color"
         app:layout_constraintBottom_toTopOf="@+id/gpsImageButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.251"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addInfoTextView"
-        app:layout_constraintVertical_bias="0.846"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/savebutton2" />
 
     <ImageButton
@@ -84,10 +83,10 @@
         android:background="@color/cardview_shadow_end_color"
         app:layout_constraintBottom_toTopOf="@+id/gpsImageButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.762"
+        app:layout_constraintHorizontal_bias="0.293"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addInfoTextView"
-        app:layout_constraintVertical_bias="0.879"
+        app:layout_constraintVertical_bias="0.344"
         app:srcCompat="@drawable/latlngbutton" />
 
     <TextView
@@ -97,8 +96,22 @@
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/gpsImageButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/latCityTextView"
-        app:layout_constraintVertical_bias="0.136" />
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/addImageButton"
+        android:layout_width="118dp"
+        android:layout_height="106dp"
+        android:background="@color/cardview_shadow_end_color"
+        app:layout_constraintBottom_toTopOf="@+id/gpsImageButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addInfoTextView"
+        app:layout_constraintVertical_bias="0.355"
+        app:srcCompat="@drawable/feeliaddpicture" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

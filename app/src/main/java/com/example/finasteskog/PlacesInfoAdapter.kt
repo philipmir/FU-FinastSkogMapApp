@@ -1,13 +1,16 @@
 package com.example.finasteskog
 
 import android.content.Context
+import android.content.Intent
 import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.Marker
+
 
 class PlacesInfoAdapter(val context: Context) : GoogleMap.InfoWindowAdapter {
 
@@ -29,6 +32,7 @@ class PlacesInfoAdapter(val context: Context) : GoogleMap.InfoWindowAdapter {
 
         locationTextView.text = place?.place
         factTextView.text = place?.information
+
         if (place != null) {
             place.image?.let { locationImageView.setImageResource(it) }
         }
@@ -40,6 +44,9 @@ class PlacesInfoAdapter(val context: Context) : GoogleMap.InfoWindowAdapter {
 
 
     }
+
+
+
 
 
 }
