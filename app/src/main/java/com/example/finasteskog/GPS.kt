@@ -1,5 +1,6 @@
 package com.example.finasteskog
 
+import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -43,6 +44,7 @@ class GPS : AppCompatActivity() {
     lateinit var latTextView: TextView
     lateinit var longTextView: TextView
     lateinit var saveImageButton: ImageButton
+    lateinit var addPictureGPSImageButton: ImageButton
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,6 +55,7 @@ class GPS : AppCompatActivity() {
         latTextView = findViewById(R.id.latTextView)
         longTextView = findViewById(R.id.longTextView)
         saveImageButton = findViewById(R.id.saveImageButton)
+        addPictureGPSImageButton = findViewById(R.id.addPictureGPSImageButton)
 
 
         auth = Firebase.auth
@@ -102,13 +105,13 @@ class GPS : AppCompatActivity() {
         saveImageButton.setOnClickListener {
             addNewGpsPlace()
 
-
-
-
-
-
-
         }
+        addPictureGPSImageButton.setOnClickListener {
+            gotToGPSAddPictureActivity()
+        }
+
+
+
 
     }
 
@@ -132,6 +135,10 @@ class GPS : AppCompatActivity() {
             .collection("items").add(placee)
 
         finish()
+    }
+    fun gotToGPSAddPictureActivity() {
+        val intent = Intent(this, AddPictureActivity::class.java)
+        startActivity(intent)
     }
 
 

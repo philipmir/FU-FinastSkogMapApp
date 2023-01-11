@@ -38,7 +38,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.23" />
+        app:layout_constraintVertical_bias="0.006" />
 
     <ImageButton
         android:id="@+id/saveImageButton"
@@ -50,7 +50,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/latTextView"
-        app:layout_constraintVertical_bias="0.964"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/savebuttoncute" />
 
     <TextView
@@ -63,6 +63,19 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/latTextView"
-        app:layout_constraintVertical_bias="0.212" />
+        app:layout_constraintVertical_bias="0.035" />
+
+    <ImageButton
+        android:id="@+id/addPictureGPSImageButton"
+        android:layout_width="149dp"
+        android:layout_height="118dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/cardview_shadow_end_color"
+        app:layout_constraintBottom_toTopOf="@+id/saveImageButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/longTextView"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/feeliaddpicture" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
