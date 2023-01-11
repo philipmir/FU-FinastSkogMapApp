@@ -10,14 +10,14 @@
     <EditText
         android:id="@+id/infoGpsEditText"
         android:layout_width="0dp"
-        android:layout_height="59dp"
+        android:layout_height="145dp"
         android:layout_marginTop="52dp"
         android:background="@color/white"
         android:backgroundTint="@color/white"
         android:ems="10"
-        android:hint="Information"
+        android:hint="Information about the forest you're standing in."
         android:inputType="textPersonName"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toTopOf="@+id/latTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -38,12 +38,13 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.006" />
+        app:layout_constraintVertical_bias="0.23" />
 
     <ImageButton
         android:id="@+id/saveImageButton"
         android:layout_width="127dp"
         android:layout_height="117dp"
+        android:layout_marginBottom="20dp"
         android:background="@color/cardview_shadow_end_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

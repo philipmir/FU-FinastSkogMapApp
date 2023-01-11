@@ -37,7 +37,7 @@
     <EditText
         android:id="@+id/addInfoTextView"
         android:layout_width="0dp"
-        android:layout_height="66dp"
+        android:layout_height="158dp"
         android:background="@color/white"
         android:ems="10"
         android:hint="Information about the Forest"
@@ -66,27 +66,27 @@
         android:id="@+id/saveImageButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp"
         android:background="@color/cardview_shadow_end_color"
         app:layout_constraintBottom_toTopOf="@+id/gpsImageButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addInfoTextView"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@+id/latLngImageButton"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/savebutton2" />
 
     <ImageButton
         android:id="@+id/latLngImageButton"
         android:layout_width="104dp"
         android:layout_height="99dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginBottom="100dp"
         android:background="@color/cardview_shadow_end_color"
         app:layout_constraintBottom_toTopOf="@+id/gpsImageButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.293"
+        app:layout_constraintHorizontal_bias="0.283"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addInfoTextView"
-        app:layout_constraintVertical_bias="0.344"
         app:srcCompat="@drawable/latlngbutton" />
 
     <TextView
@@ -105,13 +105,14 @@
         android:id="@+id/addImageButton"
         android:layout_width="118dp"
         android:layout_height="106dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginBottom="100dp"
         android:background="@color/cardview_shadow_end_color"
         app:layout_constraintBottom_toTopOf="@+id/gpsImageButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.75"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.414"
+        app:layout_constraintStart_toEndOf="@+id/latLngImageButton"
         app:layout_constraintTop_toBottomOf="@+id/addInfoTextView"
-        app:layout_constraintVertical_bias="0.355"
         app:srcCompat="@drawable/feeliaddpicture" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
